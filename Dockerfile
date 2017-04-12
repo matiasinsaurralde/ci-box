@@ -4,6 +4,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install build-essential curl
 cd /tmp && wget https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz && tar xf go1.8.1.linux-amd64.tar.gz && \
 cd /tmp/go && mv bin/* /usr/bin && \
 mv /tmp/go /usr/local/go && \
+rm /tmp/go1.8.1.linux-amd64.tar.gz && \
 apt-get -y install libglibmm-2.4-1v5 libglibmm-2.4-dev libxml++2.6-dev libgnutls-openssl-dev libssl-dev && \
 cd /tmp && wget -c "https://github.com/google/benchmark/archive/v1.1.0.tar.gz" && tar xvf v1.1.0.tar.gz && \
 cd /tmp/benchmark-1.1.0 && mkdir build && cd build && cmake .. && make && make install && \
