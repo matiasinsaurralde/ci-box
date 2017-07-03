@@ -15,4 +15,5 @@ rm -Rf /tmp/protobuf* && \
 cd /tmp && wget -c "https://github.com/grpc/grpc/archive/v1.2.3.tar.gz" && tar xvf v1.2.3.tar.gz && \
 cd /tmp/grpc-1.2.3 && make && make install && \
 rm -Rf /tmp/grpc*
+RUN apt-get install mongodb redis-server -y
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
