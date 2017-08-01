@@ -16,4 +16,6 @@ cd /tmp && wget -c "https://github.com/grpc/grpc/archive/v1.2.3.tar.gz" && tar x
 cd /tmp/grpc-1.2.3 && make && make install && \
 rm -Rf /tmp/grpc*
 RUN apt-get install mongodb redis-server -y
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y nodejs
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
